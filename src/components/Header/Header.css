@@ -1,0 +1,27 @@
+.header {
+    width: 100vw;
+    height: 1rem;
+    background-color: #ff9621;
+    color: #fff;
+    position: relative;
+}
+
+.header-title {
+    line-height: 1rem;
+    text-align: center;
+    font-size: 0.4rem;
+}
+
+.header-goBack {
+    position: absolute;
+    left: 0.3rem;
+    top: 0.2rem;
+    font-size: 0.4rem!important;
+}
+
+.header-register {
+    position: absolute;
+    right: 0.3rem;
+    top: 0.2rem;
+    font-size: 0.4rem;
+}

@@ -1,0 +1,142 @@
+.index {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.index_header {
+    width: 100%;
+    height: 1.5rem;
+    display: flex;
+    background-color: #fff;
+}
+
+.index_logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index_logo img {
+    width: 3rem;
+    height: 0.6rem;
+}
+
+.index_search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index_search input {
+    width: 2rem;
+    height: 0.5rem;
+    border-radius: 0.15rem;
+    text-align: center;
+    background-color: #cccccc;
+}
+
+.index_header input {
+    border: none;
+}
+
+.Banner {
+    width: 100%;
+    height: 4rem;
+    touch-action: none;
+}
+
+.Banner .slider,
+.slider-frame,
+.slider-list,
+.slider-slide,
+.slider-slide img {
+    height: 100% !important;
+}
+
+
+.HomeTime {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.1rem;
+}
+
+.HomeTime div {
+    width: 24%;
+    height: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.HomeTime div img {
+    width: 100%;
+    height: 1.8rem;
+}
+
+.index_list {
+    width: 100%;
+    height: 3rem;
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.1rem;
+    background-color: #fff;
+}
+
+.index_list:last-child {
+    margin-bottom: 1.5rem;
+}
+
+.index_goodsPic {
+    width: 30%;
+    height: 90%;
+}
+
+.index_goodsPic img {
+    width: 100%;
+    height: 100%;
+}
+
+.index_text {
+    flex: 1;
+    margin-left: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.index_title {
+    font-size: 0.5rem;
+    color: black;
+}
+
+.index_color {
+    color: #e33539;
+}
+
+.index_price {
+    margin-left: 0.05rem;
+}
+
+.index_buy {
+    color: #fff;
+    font-size: 0.3rem;
+}
+
+.index_buy button {
+    border: none;
+    outline: none;
+    background-color: #ff9621;
+    height: 0.7rem;
+    width: 2.5rem;
+    border-radius: 0.1rem;
+}

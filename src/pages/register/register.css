@@ -1,0 +1,53 @@
+.register {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.4rem;
+}
+
+
+.register_form {
+    flex: 1;
+}
+
+.register_form ul {
+    width: 100%;
+    height: 100%;
+}
+
+.register_form input {
+    width: 100%;
+    height: 1rem;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+.register_form ul li:first-child {
+    padding-top: 1rem;
+
+}
+
+.register_form ul li {
+    margin: 0 0.7rem;
+}
+
+.register_li {
+    margin-top: 0.2rem;
+}
+
+.register_form ul li button {
+    width: 100%;
+    height: 2.5em;
+    border-radius: 0.2rem;
+    background-color: #ff9621;
+    border: none;
+    outline: none;
+}
+
+.register_form ul .register_button {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}

@@ -1,0 +1,107 @@
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: #cccccc;
+    position: relative;
+    font-size: 0.4rem;
+}
+
+.wrap .main .pic {
+    width: 100%;
+    height: 4.5rem;
+}
+
+.wrap .main .pic img {
+    width: 100vw;
+    height: 100%;
+}
+
+.text {
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.2rem;
+    background-color: #fff;
+    margin-top: 0.2rem;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title div:first-child {
+    flex: 4;
+    font-size: 0.5rem;
+    border-right: 1px solid #ccc;
+}
+
+.title div:last-child {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.title div:last-child p img {
+    width: 0.45rem;
+    height: 0.45rem;
+
+}
+
+.price ul {
+    display: flex;
+}
+
+.price ul li{
+    height: 0.5rem!important;
+}
+
+.colorRed {
+    color: #ff536a;
+}
+
+.colorYellow {
+    color: #ffa60f;
+}
+
+.box {
+    border: 1px solid #ffa60f;
+    margin-left: 0.3rem;
+}
+
+.oldPrice {
+    margin-top: 0.3rem;
+    text-decoration: line-through;
+}
+
+.des{
+    margin-top: 1rem;
+}
+.des img{
+    width: 100vw;
+}
+.goodsdetail .footer {
+    position: fixed;
+    width: 100vw;
+    height: 1rem;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #ccc;
+    display: flex;
+}
+
+.footer div:first-child {
+    flex: 2;
+}
+
+.footer div:last-child {
+    flex: 1;
+    background-color: #ff9621;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 0.4rem;
+}
