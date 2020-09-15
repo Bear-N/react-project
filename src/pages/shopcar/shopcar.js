@@ -6,7 +6,7 @@ import Footer from './components/footer'
 import { confirmAlert, successAlert } from "../../util/alert"
 
 //请求
-import { reqCartList, reqCartAdd, reqCartDelete, reqCartEdit } from "../../util/request"
+import { reqCartList, reqCartDelete, reqCartEdit } from "../../util/request"
 
 export default class ShopCar extends Component {
   constructor() {
@@ -41,23 +41,21 @@ export default class ShopCar extends Component {
   }
   //删除商品
   deletegoods(id) {
-    reqCartDelete({ id: id }).then(res => {
-      console.log(res);
-    });
-
-    let user = JSON.parse(sessionStorage.getItem("user"))
-    reqCartList({ uid: user.uid }).then(res => {
-      if (res.data.code === 200) {
-        this.setState({
-          cartlist: res.data.list
+    confirmAlert(() => {
+      reqCartDelete({ id: id }).then(res => {
+        let user = JSON.parse(sessionStorage.getItem("user"))
+        reqCartList({ uid: user.uid }).then(res => {
+          if (res.data.code === 200) {
+            this.setState({
+              cartlist: res.data.list
+            })
+          }
         })
-      }
+      })
     })
   }
   //修改商品
   updategoods(arr) {
-    console.log(arr);
-    
     let goods = arr[0];
     let type = arr[1];
     arr[2].preventDefault();
@@ -74,7 +72,6 @@ export default class ShopCar extends Component {
       });
 
       reqCartEdit({ id: goods.id, type: type }).then(res => {
-
       })
 
       let user = JSON.parse(sessionStorage.getItem("user"))
@@ -114,10 +111,7 @@ export default class ShopCar extends Component {
       allchecked: this.state.cartlist.every(item => item.checked)
     })
   }
-  //防止多次点击
-  waitReq() {
 
-  }
   render() {
     const { cartlist, editicon, allchecked } = this.state;
     var allprice = 0;

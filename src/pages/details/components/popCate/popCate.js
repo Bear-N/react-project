@@ -3,14 +3,13 @@ import './popCat.css'
 import { withRouter } from "react-router-dom"
 //请求
 import { reqCartAdd } from "../../../../util/request"
+import { successAlert } from "../../../../util/alert"
 class popcate extends Component {
-
     toShopcart() {
         let user = JSON.parse(sessionStorage.getItem("user"))
 
         reqCartAdd({ uid: user.uid, goodsid: this.props.goodsinfo[0].id, num: 1 }).then(res => {
-            console.log(res);
-
+            successAlert(res.data.msg)
         })
 
         this.props.history.push("/index/cart")

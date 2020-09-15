@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './register.css'
 import Header from '../../components/Header/Header'
 import { reqMemberRegister } from "../../util/request"
-import Alert from "../../components/Alert/Alert"
+import { successAlert } from "../../util/alert"
 export default class Register extends Component {
     constructor() {
         super()
@@ -12,7 +12,6 @@ export default class Register extends Component {
                 nickname: '',
                 password: ''
             },
-            success: false
         }
     }
 
@@ -28,25 +27,25 @@ export default class Register extends Component {
     register() {
         reqMemberRegister(this.state.user).then(res => {
             if (res.data.code === 200) {
-                this.setState({
-                    success: true
-                })
-                setTimeout(() => {
-                    this.props.history.push("/login")
-                }, 2000)
+                successAlert(res.data.msg)
+                this.props.history.push("/login")
             } else {
+                successAlert(res.data.msg)
                 this.setState({
-                    user: {}
+                    user: {
+                        phone: "",
+                        nickname: '',
+                        password: ''
+                    }
                 })
             }
         })
     }
     render() {
-        let { user, success } = this.state
+        let { user} = this.state
         return (
             <div className="register">
                 <Header back title='注册' ></Header>
-                <Alert title="注册成功" isShow={success}></Alert>
                 <div className="register_form">
                     <ul>
                         <li className='li'>  手机号：</li>

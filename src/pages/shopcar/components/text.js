@@ -2,12 +2,8 @@ import React from 'react'
 import checked from '../../../assets/img/radio_hig.png'
 import noChecked from '../../../assets/img/radio_nor.png'
 import address from '../../../assets/img/store.png'
-import img from '../../../assets/img/meizhuang.png'
 export default function Text(props) {
-    console.log(props);
     const { cartlist, editicon, deletegoods, updategoods, changeOneChecked } = props
-
-
     return (
         <div>
             <div className="ShopCar_Main">
@@ -25,7 +21,6 @@ export default function Text(props) {
                                     {editicon === false ? <div className='carCheck hidecheck' >
                                         <div onClick={() => { changeOneChecked(index) }}>{item.checked ? <img src={checked} alt="" className="checkimg" /> :
                                             <img src={noChecked} alt="" className="checkimg" />}</div>
-
                                     </div> : null}
 
                                     <div className='carImg'>
@@ -45,14 +40,13 @@ export default function Text(props) {
                                     <div className='carMoney'>
                                         ¥<span>{item.price}</span>
                                     </div>
-                                    {editicon ? <div className="carDel hidecarDel" onClick={() => { deletegoods(item.id) }}>删除</div> : null}
+                                    {editicon ? <div className="carDel" onClick={() => { deletegoods(item.id) }}>删除</div> : null}
                                 </li>
                             </ul>
                         )
                     })
                 }
             </div>
-
         </div>
     )
 }

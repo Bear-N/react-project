@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './listDetail.css'
 import Header from '../../components/Header/Header'
 //请求
-import { reqGoodsInfo } from "../../util/request"
+import { reqGoods } from "../../util/request"
 
 export default class ListDetail extends Component {
     constructor() {
@@ -15,11 +15,11 @@ export default class ListDetail extends Component {
     componentDidMount() {
         let id = this.props.match.params.id
         let title = this.props.match.params.title
-        reqGoodsInfo({ id: id }).then(res => {
+        reqGoods({ fid: id }).then(res => {
             if (res.data.code === 200) {
                 this.setState({
-                    title:title,
-                    goodsinfo: res.data.list
+                    title: title,
+                    goodsinfo: res.data.list ? res.data.list : []
                 })
             }
         });

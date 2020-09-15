@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './login.css'
 import Header from '../../components/Header/Header'
 import { reqMemberLogin } from "../../util/request"
-import Alert from "../../components/Alert/Alert"
+import { successAlert } from "../../util/alert"
 
 export default class Login extends Component {
     constructor() {
@@ -12,7 +12,6 @@ export default class Login extends Component {
                 phone: '',
                 password: ''
             },
-            success: false
         }
     }
 
@@ -28,14 +27,10 @@ export default class Login extends Component {
     login() {
         reqMemberLogin(this.state.user).then(res => {
             if (res.data.code === 200) {
-                sessionStorage.setItem("user",JSON.stringify(res.data.list))
+                sessionStorage.setItem("user", JSON.stringify(res.data.list))
                 sessionStorage.setItem("isLogin", 1)
-                this.setState({
-                    success: true
-                })
-                setTimeout(() => {
-                    this.props.history.push("/index/home")
-                }, 2000)
+                successAlert(res.data.msg)
+                this.props.history.push("/index/home")
             } else {
                 this.setState({
                     user: {
@@ -48,11 +43,10 @@ export default class Login extends Component {
     }
 
     render() {
-        let { user, success } = this.state
+        let { user} = this.state
         return (
             <div className="login">
                 <Header title="登录" register></Header>
-                <Alert title="登录成功" isShow={success}></Alert>
                 <div className="login_form">
                     <ul>
                         <li className='login_li'> 账号</li>

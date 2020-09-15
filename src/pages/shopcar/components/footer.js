@@ -17,17 +17,17 @@ export default function Footer(props) {
         <div>
             <div className='ShopCar_footer'>
                 <ul>
-                    <li>
+                    <li onClick={() => { changeAllChecked() }}>
                         <div>
                             {allchecked ? <img src={checked} alt="" className="picsize" /> : <img src={nochecked} alt="" className="picsize" />}
                         </div>
-                        <div onClick={() => { changeAllChecked() }}>全选</div>
+                        <div>全选</div>
                     </li>
-                    <li>
+                    <li onClick={() => editcart()}>
                         <div>
                             {editicon ? <img src={change} alt="" className="picsize" /> : <img src={nochange} alt="" className="picsize" />}
                         </div>
-                        <div onClick={() => editcart()}>编辑</div>
+                        <div>编辑</div>
                     </li>
                     <li>
                         <div>
