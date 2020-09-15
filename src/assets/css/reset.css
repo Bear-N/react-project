@@ -319,3 +319,6 @@ i {
 .clearfix::after {
   clear: both;
 }
+.App{
+  touch-action: none;
+}

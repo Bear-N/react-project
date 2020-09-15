@@ -5,14 +5,14 @@ import address from '../../../assets/img/store.png'
 import img from '../../../assets/img/meizhuang.png'
 export default function Text(props) {
     console.log(props);
-    const { cartlist, editicon, deletegoods, updategoods } = props
-    console.log(editicon);
+    const { cartlist, editicon, deletegoods, updategoods, changeOneChecked } = props
+
 
     return (
         <div>
             <div className="ShopCar_Main">
                 {
-                    cartlist.map(item => {
+                    cartlist.map((item, index) => {
                         return (
                             <ul key={item.id}>
                                 <li className='ShopCar_address'>
@@ -23,7 +23,9 @@ export default function Text(props) {
                                 </li>
                                 <li className='ShopCar_text'>
                                     {editicon === false ? <div className='carCheck hidecheck' >
-                                        <img src={noChecked} alt="" className="checkimg" />
+                                        <div onClick={() => { changeOneChecked(index) }}>{item.checked ? <img src={checked} alt="" className="checkimg" /> :
+                                            <img src={noChecked} alt="" className="checkimg" />}</div>
+
                                     </div> : null}
 
                                     <div className='carImg'>
@@ -32,9 +34,9 @@ export default function Text(props) {
                                     <div className='carNum'>
                                         <p> {item.goodsname}</p>
                                         <p>
-                                            <button onClick={() => updategoods(item.id, 1)}>-</button>
-                                            {item.num < 1 ? <button>{item.num=1}</button> : <button>{item.num}</button>}
-                                            <button onClick={() => updategoods(item.id, 2)}>+</button>
+                                            <button onClick={(e) => updategoods([item, 1, e])}>-</button>
+                                            <button>{item.num}</button>
+                                            <button onClick={(e) => updategoods([item, 2, e])}>+</button>
                                         </p>
                                         <p>
                                             总价：<span>{item.num >= 1 ? item.num * item.price : item.price}</span>

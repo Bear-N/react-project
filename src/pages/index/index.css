@@ -27,6 +27,7 @@
 .index .indexfooter .nav{
     color: black;
     background-color: #fff;
+    font-size: 0.35rem;
 }
 .index .indexfooter .nav:hover{
     color:#ff9621;

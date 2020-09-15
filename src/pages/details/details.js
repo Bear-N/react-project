@@ -11,7 +11,7 @@ class Details extends Component {
         super()
         this.state = {
             goodsinfo: [],
-            isShow: false,
+            isShow: false,//显示规格
             specslist: []
         }
     }
@@ -27,7 +27,6 @@ class Details extends Component {
                     specslist: JSON.parse(res.data.list[0].specsattr)
                 })
             }
-
         });
     }
     showSpecs() {
@@ -35,12 +34,19 @@ class Details extends Component {
             isShow: true
         })
     }
+    changemask(e) {
+        if (e.target.className === "popwrap") {
+            this.setState({
+                isShow: false
+            })
+        }
+    }
     render() {
         const { goodsinfo, isShow, specslist } = this.state;
         return (
             <div className='wrap'>
                 <Header title="商品详情" back></Header>
-                {isShow? <Popcate goodsinfo={goodsinfo} specslist={specslist}></Popcate> : null}
+                {isShow ? <Popcate goodsinfo={goodsinfo} specslist={specslist} changemask={(e) => this.changemask(e)}></Popcate> : null}
                 {
                     goodsinfo.map(item => {
                         return (
@@ -61,8 +67,8 @@ class Details extends Component {
                                             <ul>
                                                 <li className='colorRed'>¥</li>
                                                 <li className='colorRed'>{item.price}</li>
-                                                {item.ishot===1?<li className='colorYellow box' >热卖</li>:null}
-                                                {item.isnew===1?<li className='colorYellow box' >新品</li>:null}
+                                                {item.ishot === 1 ? <li className='colorYellow box' >热卖</li> : null}
+                                                {item.isnew === 1 ? <li className='colorYellow box' >新品</li> : null}
                                             </ul>
                                         </div>
                                         <div className='oldPrice'>¥{item.market_price}</div>

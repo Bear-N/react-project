@@ -22,8 +22,8 @@ function App() {
     <div className="App">
       {/*一级路由 */}
       <Switch>
-        <MyRoute path='/login' component={Login}></MyRoute>
-        <MyRoute path='/register' component={Register} ></MyRoute>
+        <Route path='/login' component={Login}></Route>
+        <Route path='/register' component={Register} ></Route>
         <MyRoute path='/index' component={Index} ></MyRoute>
         <MyRoute path='/detail/:id' component={Detail} ></MyRoute>
         <MyRoute path='/listdetail/:id/:title' component={Listdetail} ></MyRoute>

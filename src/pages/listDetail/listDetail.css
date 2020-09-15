@@ -15,17 +15,17 @@
     flex: 1;
 }
 
-.pic img {
+.listdetail .pic img {
     width: 100%;
     height: 100%;
 }
 
-.text {
+.listdetail .text {
     flex: 2;
     margin-left: 0.3rem;
 }
 
-.color {
+.listdetail .color {
     color: #e34087;
 }
 
@@ -33,7 +33,7 @@
     font-size: 0.4rem;
 }
 
-.price {
+.listdetail .price {
     margin-top: 0.3rem;
 }
 

@@ -4,13 +4,12 @@ let baseUrl = ""
 
 
 //请求拦截
-// axios.interceptors.request.use(config => {
-//     if (config.url == baseUrl + "/api/userlogin") {
-//         return config
-//     }
-//     config.headers.authorization = store.state.user.info.token;
-//     return config;
-// })
+axios.interceptors.request.use(config => {
+    if (config.url !== baseUrl + "/api/login" && config.url !== baseUrl + "/api/register") {
+        config.headers.authorization = JSON.parse(sessionStorage.getItem("user")).token;
+    }
+    return config;
+})
 
 //响应拦截
 axios.interceptors.response.use(res => {

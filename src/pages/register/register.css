@@ -9,6 +9,7 @@
 
 .register_form {
     flex: 1;
+    background-color: #fff;
 }
 
 .register_form ul {

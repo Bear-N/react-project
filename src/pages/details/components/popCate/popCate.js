@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom"
 //请求
 import { reqCartAdd } from "../../../../util/request"
 class popcate extends Component {
+
     toShopcart() {
         let user = JSON.parse(sessionStorage.getItem("user"))
 
@@ -11,13 +12,13 @@ class popcate extends Component {
             console.log(res);
 
         })
-        
+
         this.props.history.push("/index/cart")
     }
     render() {
-        const { goodsinfo, specslist } = this.props
+        const { goodsinfo, specslist, changemask } = this.props
         return (
-            <div className="popwrap">
+            <div className="popwrap" onClick={(e) => { changemask(e) }}>
                 <div className="popfooter">
                     <ul>
                         <li className='pic'>

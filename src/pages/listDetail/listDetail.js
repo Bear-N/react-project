@@ -29,7 +29,7 @@ export default class ListDetail extends Component {
         return (
             <div className='wrap'>
                 <Header title={title} back></Header>
-                <div className="main">
+                <div className="main listdetail">
                     <ul>
                         {
                             goodsinfo.map(item => {
